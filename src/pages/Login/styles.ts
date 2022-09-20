@@ -20,16 +20,6 @@ export const Wrapper = styled.div`
         height: 80px;
     }
 `
-export const LoginButton = styled.div`
-    background-color:red;
-    border: none;
-    color: white;
-    border-radius: 6px;
-    padding: 5px 15px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-`
 export const Container = styled.div`
     width: 100%;
     height: 100%;
@@ -41,42 +31,43 @@ export const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     color: white;
-
-`
-export const Title = styled.div`
-    font-size: 50px;
-`
-export const SubTitle = styled.div`
-    margin: 20px;
-    font-weight: 500;
-    font-size: 20px;
-`
-export const Description = styled.div`
-    font-size: 20px;
-
-`
-export const InputContainer = styled.div`
-    width: 50%;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    height:50px;
-    border-radius:6px;
-    input{
-        flex: 9;
-        height: 100%;
-        border: none;
-        padding: 0 10px;
-        outline: none;
+    form {
+        width: 340px;
+        height: 400px;
+        padding: 30px;
+        border-radius: 6px;
+        background-color: var(--main-color);
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around; 
+            input {
+                height:40px;
+                border-radius: 6px;
+                background-color: gray;
+                color: white;
+                padding-left: 10px;
+             ::placeholder {
+                color: white;
+            }
+        
+        }
+        button {
+                height:40px;
+                border-radius: 6px;
+                background-color: red;
+                color: white;
+                border: none;
+                font-size: 18px;
+                font-weight: 500;
+                cursor: pointer;
+         }    
+         span{
+            color: lightgrey;
+            b{
+                color: white;
+            }
+         } 
+        
     }
-    button{
-        flex: 3;
-        height: 100%;
-        background-color: red;
-        border: none;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-    }
+
 `
