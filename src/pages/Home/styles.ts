@@ -6,4 +6,5 @@ export const Home = styled.div`
     align-items: center; */
     color: white;
     background-color: #0b0b0b;
+    overflow: hidden;
 `

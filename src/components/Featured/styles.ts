@@ -77,3 +77,25 @@ export const IconPlay = styled(PlayArrowIcon)`
 `
 export const IconInfo = styled(InfoOutlinedIcon)`
 `
+
+export const Category = styled.div`
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    font-size:30px;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    align-items: center;
+`
+export const SelectType = styled.select`
+    cursor: pointer;
+    background-color: var(--main-color);
+    border: 1px solid white;
+    color: white;
+    margin-left: 20px;
+    padding: 5px;
+`
+export const TypeFeatured = styled.span`
+
+`
