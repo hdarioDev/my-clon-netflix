@@ -14,10 +14,8 @@ const index = () => {
 
     const navigate = useNavigate();
 
-
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        console.log("send");
         navigate('/home')
     }
 
@@ -29,7 +27,6 @@ const index = () => {
                         src={IMG_LOGO}
                         alt="Logo"
                     />
-
                 </Wrapper>
             </Top>
             <Container>

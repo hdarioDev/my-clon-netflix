@@ -11,32 +11,25 @@ const IMAGE_MOVIE = MOVIES_BG[indexVal]
 const IMAGE_TITLE = MOVIES_TITLE[indexVal]
 
 export const Featured = styled.div`
-    /* background-color: red; */
     height: 90vh;
     position: relative;
-
 `
 
 export const ImageBg = styled.div`
     width: 100%;
-    /* background-color: red; */
     background : linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #0b0b0b 100%), url(${IMAGE_MOVIE});
     height: 100%;
     background-size: cover;
     background-position: 50% 50%;
-    /* object-fit: cover; */
-    /* background: linear-gradient( to top, transparent 0%, rgb(0,0,0,0.3) 50% ); */
 `
 export const ImageTitleContainer = styled.div`
-  /* width: 480px;
-    height: 250px;
-    background-repeat: no-repeat; */
+
 `
 export const ImageTitleMovie = styled.div`
-  width: 480px; /* You must set a specified height */
+  width: 480px;
   height: 200px;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: 100% 100%;
     background-image: url(${IMAGE_TITLE});
     @media (max-width: 768px) {
@@ -62,13 +55,11 @@ export const Description = styled.div`
         font-size: 10px;
         width: 240px;
   }
-
 `
 
 export const ContainerButtons = styled.div`
     display : flex;
 `
-
 
 const ButtonBg = css`
     padding: 10px 20px;

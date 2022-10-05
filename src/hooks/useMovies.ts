@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react"
 import requests from "../utils/requests"
-// import movieDB from "../api/movieDB"
-// import { IResponseMovies, Movie } from "../interfaces/movieInterface"
-// interface MoviesState {
-//     nowPlaying: Movie[],
-//     popular: Movie[],
-//     topRated: Movie[],
-//     upcoming: Movie[],
-// }
+
 
 export const useMovies = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -26,12 +19,6 @@ export const useMovies = () => {
 
 
     const getData = async () => {
-        console.log("Traendo data ... ");
-
-        // const nowPlayingPromise = movieDB.get<any>('/now_playing')
-        // const popularPromise = movieDB.get<any>('/popular')
-        // const topRatedPromise = movieDB.get<any>('/top_rated')
-        // const upcomingPromise = movieDB.get<any>('/upcoming')
 
         const [
             netflixOriginals,
@@ -52,7 +39,6 @@ export const useMovies = () => {
             fetch(requests.fetchRomanceMovies).then((res) => res.json()),
             fetch(requests.fetchDocumentaries).then((res) => res.json()),
         ])
-        console.log("netflixOriginals custom hook  ", netflixOriginals);
 
         setMoviesState({
             netflixOriginals: netflixOriginals.results,

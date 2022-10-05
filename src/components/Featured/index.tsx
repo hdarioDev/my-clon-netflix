@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import {
     Featured,
     ImageBg,
@@ -25,7 +26,10 @@ interface Props {
 }
 
 const index = ({ type }: Props) => {
-
+    const navigate = useNavigate();
+    const handleWatch = () => {
+        navigate('/watch')
+    }
     return (
         <Featured>
             {
@@ -54,7 +58,7 @@ const index = ({ type }: Props) => {
                 <ContainerButtons>
                     <ButtonPlay>
                         <IconPlay />
-                        <PlayDescription> Play</PlayDescription>
+                        <PlayDescription onClick={handleWatch} > Play</PlayDescription>
                     </ButtonPlay>
                     <ButtonMore>
                         <IconInfo />

@@ -1,6 +1,4 @@
 import styled, { css } from "styled-components"
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 
 export const List = styled.div`
     width: 100%;
@@ -32,7 +30,6 @@ const Slider = css`
     color: white;
     position: absolute;
     z-index: 99;
-    /* background-color: cyan;  */
     top: 0;
     bottom: 0;
     margin: auto;
@@ -46,14 +43,6 @@ export const ArrowBackIcon = styled.div`
      left: 0;
      cursor: pointer;
 `
-
-// export const ArrowBackIcon = styled(({ isMoved, ...props}) => (
-//     ArrowBackIosIcon 
-//   ))<SvgStyledProps>`
-//   ${Slider}
-//   left: 0;
-//   `;
-
 export const ArrowNextIcon = styled.div`
      ${Slider}
      right: 0;

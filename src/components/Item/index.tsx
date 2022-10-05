@@ -14,11 +14,10 @@ import {
     SpanHour,
     SpanLimit,
     SpanYear,
-    ItemInfoDescription,
-    ItemInfoGenre
+    ItemInfoDescription
 } from './styles'
 
-const IMAGE_ITEM = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFg3RdSQK0l1a6JebKa1wCKQx5Uc3TBkausjnapM_Da-eAhiOh2myj0WgE9RrkdK6mp3s&usqp=CAU'
+const URI_PO = 'https://image.tmdb.org/t/p/w500'
 const TRAILER = "https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761"
 interface IProps {
     index: number;
@@ -34,15 +33,14 @@ const index = ({ index, movie }: IProps) => {
     }
     return (
         <Item
-            // style={{ left: index * 225 - 50 }}
-
+            onClick={handleWatch}
             isHovered={isHovered}
             index={index}
-            onMouseEnter={() => { setIsHovered(true); console.log({ isHovered }) }}
-            onMouseLeave={() => { setIsHovered(false); console.log({ isHovered }, 'CHAUUU ') }}
+            onMouseEnter={() => { setIsHovered(true) }}
+            onMouseLeave={() => { setIsHovered(false) }}
         >
             <ImageItem
-                src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path
+                src={`${URI_PO}${movie.backdrop_path || movie.poster_path
                     }`}
             />
             {

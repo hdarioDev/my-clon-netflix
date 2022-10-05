@@ -20,8 +20,7 @@ export const Nav = styled.div<IProps>`
         isScrolled &&
         css`
         background-color: var(--main-color);
-        `}
-
+    `}
 `
 export const Container = styled.div`
    color: white;
@@ -76,7 +75,6 @@ export const ImgProfile = styled.img`
 `
 
 export const ItemRight = styled.span`
-    /* margin-right: 20px; */
     cursor: pointer;
 
 `

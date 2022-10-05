@@ -22,13 +22,10 @@ const index = ({ title, movies }: Props) => {
     const listRef = useRef<HTMLDivElement>(null)
     const [isMoved, setIsMoved] = useState(false)
     const [slideNumber, setSlideNumber] = useState(0)
-    console.log("isMoved ", isMoved);
 
     const handleClick = (direction: string) => {
         setIsMoved(true)
         let distance = listRef.current!.getBoundingClientRect().x - 50
-        console.log("distance ", distance)
-        console.log({ slideNumber });
         if (slideNumber == 1 && direction === 'left') {
             setIsMoved(false)
         }
@@ -42,7 +39,6 @@ const index = ({ title, movies }: Props) => {
             setSlideNumber(slideNumber + 1)
             listRef.current.style.transform = `translateX(${-230 + distance}px)`
         }
-
     }
     return (
         <List>

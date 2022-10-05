@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import {
     Nav,
@@ -64,10 +64,7 @@ const index = () => {
                             <ProfileOptionsItem onClick={handleLogout} >Logout </ProfileOptionsItem>
                         </ProfileOptions>
                     </Profile>
-
-
                 </Right>
-
             </Container>
         </Nav>
     )

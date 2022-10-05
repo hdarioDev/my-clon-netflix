@@ -18,15 +18,13 @@ function App() {
         <>
             <GlobalStyles />
             <BrowserRouter>
-                <Routes>
+                <Routes >
+                    <Route path="/" element={<Register />} />
                     <Route path="register" element={<Register />} />
                     <Route path="login" element={<Login />} />
                     <Route path="home" element={<Home />} />
                     <Route path="watch" element={<Watch />} />
                     <Route path="/*" element={<Navigate to="/home" replace />} />
-                    {/* <Watch /> */}
-                    {/* <Register /> */}
-                    {/* <Login /> */}
                 </Routes>
             </BrowserRouter>
         </>
