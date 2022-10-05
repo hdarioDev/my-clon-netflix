@@ -5,10 +5,11 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 export const List = styled.div`
     width: 100%;
     margin-top: 10px;
+    margin-bottom: 20px;
 `
 export const ListTitle = styled.span`
     color : white;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     margin-left: 50px;
 `
@@ -25,19 +26,22 @@ export const ContainerItem = styled.div`
 `
 
 const Slider = css`
-    width: 50px;
-    height: 100%;
-    background-color: rgb(22, 22, 22, 0.5);
+    width: 30px;
+    height: 120px;
+    background-color: rgb(22, 22, 22, 0.8);
     color: white;
     position: absolute;
     z-index: 99;
-    /* background-color: cyan; */
+    /* background-color: cyan;  */
     top: 0;
     bottom: 0;
     margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 
-export const ArrowBackIcon = styled(ArrowBackIosIcon)`
+export const ArrowBackIcon = styled.div`
      ${Slider}
      left: 0;
      cursor: pointer;
@@ -50,7 +54,7 @@ export const ArrowBackIcon = styled(ArrowBackIosIcon)`
 //   left: 0;
 //   `;
 
-export const ArrowNextIcon = styled(ArrowForwardIosIcon)`
+export const ArrowNextIcon = styled.div`
      ${Slider}
      right: 0;
      cursor: pointer;

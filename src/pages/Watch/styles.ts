@@ -14,8 +14,8 @@ export const Back = styled.div`
     display: flex;
     align-items: center;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 17px;
+    left: 18px;
     color: white;
     cursor: pointer;
     z-index: 2;

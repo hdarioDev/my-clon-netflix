@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import {
     Login,
     Wrapper,
@@ -10,6 +11,15 @@ import {
 const IMG_LOGO = 'https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png'
 
 const index = () => {
+
+    const navigate = useNavigate();
+
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        console.log("send");
+        navigate('/home')
+    }
 
     return (
         <Login>
@@ -23,11 +33,11 @@ const index = () => {
                 </Wrapper>
             </Top>
             <Container>
-                <form action="">
+                <form onSubmit={handleSubmit}>
                     <h1>Sign In</h1>
                     <input type="email" placeholder="Email or phone number" />
                     <input type="password" placeholder="Password" />
-                    <button>Sign In</button>
+                    <button type="submit">Sign In</button>
                     <span>
                         New to Netflix?
                         <b> Sign up now. </b>

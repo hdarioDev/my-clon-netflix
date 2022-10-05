@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { Movie } from '../../interfaces/moviesInterface';
 import {
     Item,
     ImageItem,
@@ -20,26 +22,36 @@ const IMAGE_ITEM = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFg3Rd
 const TRAILER = "https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761"
 interface IProps {
     index: number;
+    movie: Movie;
+
 }
 
-const index = ({ index }: IProps) => {
+const index = ({ index, movie }: IProps) => {
     const [isHovered, setIsHovered] = useState(false)
+    const navigate = useNavigate();
+    const handleWatch = () => {
+        navigate('/watch')
+    }
     return (
         <Item
             // style={{ left: index * 225 - 50 }}
+
             isHovered={isHovered}
             index={index}
             onMouseEnter={() => { setIsHovered(true); console.log({ isHovered }) }}
             onMouseLeave={() => { setIsHovered(false); console.log({ isHovered }, 'CHAUUU ') }}
         >
-            <ImageItem src={IMAGE_ITEM} />
+            <ImageItem
+                src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path
+                    }`}
+            />
             {
                 isHovered && (
                     <>
-                        <video src={TRAILER} autoPlay={true} loop />
-                        <ItemInfo>
+                        <video src={TRAILER} autoPlay={true} loop onClick={handleWatch} />
+                        <ItemInfo >
                             <IconsContainer>
-                                <IconPlay className="icon" />
+                                <IconPlay className="icon" onClick={handleWatch} />
                                 <IconAdd className="icon" />
                                 <IconLike className="icon" />
                                 <IconDisLike className="icon" />
@@ -50,11 +62,11 @@ const index = ({ index }: IProps) => {
                                 <SpanYear>1999</SpanYear>
                             </ItemInfoTop>
                             <ItemInfoDescription>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium libero delectus fugiat non aliquam error consectetur.
+                                Lorem, ipsum dolor sit amet consectetur.
                             </ItemInfoDescription>
-                            <ItemInfoGenre>
+                            {/* <ItemInfoGenre>
                                 Action
-                            </ItemInfoGenre>
+                            </ItemInfoGenre> */}
                         </ItemInfo>
                     </>
                 )

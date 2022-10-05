@@ -17,12 +17,14 @@ export const Item = styled.div<IProps>`
     overflow: hidden;
     cursor: pointer;
     color: white;
+    border-radius: 6px;
 
-    &:hover{
+    @media (min-width: 768px) {
+        &:hover{
             width: 325px;
-            height:300px;  
+            height:280px;  
             position: absolute;
-            top: -140px;
+            top: -90px;
             ${({ index }) => css`left: ${index * 225 - 50}px;`} 
             -webkit-box-shadow: 0px 1px 15px 0px rgba(255,255,255,0.14); 
             box-shadow: 0px 1px 15px 0px rgba(255,255,255,0.14);
@@ -38,6 +40,10 @@ export const Item = styled.div<IProps>`
                 left: 0;
                 object-fit: cover;
             }
+        }
+  }
+    &:hover{
+       
     }
 `
 export const ImageItem = styled.img`
@@ -54,15 +60,19 @@ export const ItemInfo = styled.div`
 export const IconsContainer = styled.div`
     display: flex;
     margin-bottom: 10px;
+    position: relative;
     .icon{
         border: 2px solid white;
         padding: 5px;
         border-radius: 50%;
         margin-right: 10px;
+        height: 32px;
+        width: 32px;
         /* font-size:16px; */
     }
 `
 export const IconPlay = styled(PlayArrowIcon)`
+
 `
 export const IconAdd = styled(AddIcon)`
 `

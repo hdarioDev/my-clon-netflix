@@ -2,21 +2,46 @@
 import styled, { css } from 'styled-components';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import { MOVIES_BG, MOVIES_TITLE } from '../../utils/constants';
+import { randomNumber } from '../../utils/randomNumber';
+
+
+const indexVal = randomNumber(0, 3)
+const IMAGE_MOVIE = MOVIES_BG[indexVal]
+const IMAGE_TITLE = MOVIES_TITLE[indexVal]
 
 export const Featured = styled.div`
-    background-color: red;
+    /* background-color: red; */
     height: 90vh;
     position: relative;
+
 `
 
-export const ImageBg = styled.img`
+export const ImageBg = styled.div`
     width: 100%;
+    /* background-color: red; */
+    background : linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #0b0b0b 100%), url(${IMAGE_MOVIE});
     height: 100%;
-    object-fit: cover;
-
+    background-size: cover;
+    background-position: 50% 50%;
+    /* object-fit: cover; */
+    /* background: linear-gradient( to top, transparent 0%, rgb(0,0,0,0.3) 50% ); */
 `
-export const ImageTitleMovie = styled.img`
-    width: 400px;
+export const ImageTitleContainer = styled.div`
+  /* width: 480px;
+    height: 250px;
+    background-repeat: no-repeat; */
+`
+export const ImageTitleMovie = styled.div`
+  width: 480px; /* You must set a specified height */
+  height: 200px;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: 100% 100%;
+    background-image: url(${IMAGE_TITLE});
+    @media (max-width: 768px) {
+        width: 240px;
+  }
 `
 
 export const Info = styled.div`
@@ -32,7 +57,12 @@ export const Info = styled.div`
 
 export const Description = styled.div`
     margin : 20px 0px;
-    font-size: 16px;
+   
+    @media (max-width: 768px) {
+        font-size: 10px;
+        width: 240px;
+  }
+
 `
 
 export const ContainerButtons = styled.div`

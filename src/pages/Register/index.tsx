@@ -1,4 +1,7 @@
 import React, { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+
 import {
     Register,
     Wrapper,
@@ -17,7 +20,10 @@ const IMG_LOGO = 'https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.pn
 
 const index = () => {
 
-    const [email, setEmail] = useState('')
+    const navigate = useNavigate();
+
+
+    const [email, setEmail] = useState('test@gmail.com')
     const [password, setPassword] = useState('')
     const emailRef = useRef<HTMLInputElement>(null)
     const passwordRef = useRef<HTMLInputElement>(null)
@@ -28,6 +34,8 @@ const index = () => {
 
     const handleFinish = () => {
         setPassword(passwordRef.current!.value)
+        navigate('/login')
+
     }
     return (
         <Register>
@@ -37,7 +45,7 @@ const index = () => {
                         src={IMG_LOGO}
                         alt="Logo"
                     />
-                    <LoginButton>
+                    <LoginButton onClick={handleFinish} >
                         Sign In
                     </LoginButton>
                 </Wrapper>
@@ -60,7 +68,7 @@ const index = () => {
                         </InputContainer>
                     ) : (
                         <InputContainer>
-                            <input type="password" placeholder="password" ref={passwordRef} />
+                            <input type="password" placeholder="test@gmail.com" ref={passwordRef} />
                             <button onClick={handleFinish} >Started</button>
                         </InputContainer>
                     )

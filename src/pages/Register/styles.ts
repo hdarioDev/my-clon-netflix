@@ -10,6 +10,7 @@ export const Register = styled.div`
     position: relative;
 `
 export const Top = styled.div`
+
 `
 export const Wrapper = styled.div`
     padding: 0px 50px;
@@ -19,11 +20,18 @@ export const Wrapper = styled.div`
     img{
         height: 80px;
     }
+    @media (max-width: 768px) {
+        padding: 0px 10px;
+        img{
+        height: 70px;
+    }
+    }
 `
-export const LoginButton = styled.div`
+export const LoginButton = styled.button`
     background-color:red;
     border: none;
     color: white;
+    z-index: 9;
     border-radius: 6px;
     padding: 5px 15px;
     font-size: 16px;
@@ -45,14 +53,27 @@ export const Container = styled.div`
 `
 export const Title = styled.div`
     font-size: 50px;
+    text-align: center;
+    @media (max-width: 768px) {
+        font-size: 40px;
+    }
+ 
 `
 export const SubTitle = styled.div`
     margin: 20px;
     font-weight: 500;
     font-size: 20px;
+    text-align: center;
+
 `
 export const Description = styled.div`
     font-size: 20px;
+    text-align: center;
+    @media (max-width: 768px) {
+        font-size: 14px;
+        margin: 0 12px;
+    }
+
 
 `
 export const InputContainer = styled.div`
@@ -63,6 +84,7 @@ export const InputContainer = styled.div`
     margin-top: 20px;
     height:50px;
     border-radius:6px;
+    position: relative;
     input{
         flex: 9;
         height: 100%;
@@ -78,7 +100,21 @@ export const InputContainer = styled.div`
         color: white;
         font-size: 16px;
         cursor: pointer;
+       
     }
+    @media (max-width: 768px) {
+            padding: 0px 10px;
+            flex-direction: column;
+       
+            button{
+                position: absolute;
+                height: 50px;
+                width: 100%;
+                left: 0;
+                top: 60px;
+                border-radius: 8px;
+            }
+        }
 `
 export const Form = styled.form`
 

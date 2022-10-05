@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import SearchIcon from '@material-ui/icons/Search';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-
+import { NavLink } from 'react-router-dom'
 interface IProps {
     isScrolled?: boolean;
 }
@@ -30,25 +30,41 @@ export const Container = styled.div`
    align-items: center;
    justify-content: space-between;
    height: 70px;
-
+   @media (max-width: 768px) {
+    padding: 0px 10px;
+  }
     
 `
 export const Left = styled.div`
    display: flex;
    align-items: center;  
+   width: 500px;
 `
 export const ImgLogo = styled.img`
   height: 55px;
   margin-right: 40px;
+
+
 `
-export const ItemLeft = styled.span`
+export const ItemLeft = styled(NavLink)`
 margin-right: 20px;
+color: inherit;
+text-decoration: none;
+width:100px;
 cursor: pointer;
+@media (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const Right = styled.div`
    display: flex;
    align-items: center;
+   @media (max-width: 768px) {
+    span:nth-child(3) {
+        display: none;
+    }
+  }
 `
 
 export const ImgProfile = styled.img`
@@ -62,6 +78,7 @@ export const ImgProfile = styled.img`
 export const ItemRight = styled.span`
     /* margin-right: 20px; */
     cursor: pointer;
+
 `
 const Icon = css`
     margin: 0px 15px;

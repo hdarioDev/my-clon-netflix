@@ -15,13 +15,10 @@ import {
 
     Category,
     TypeFeatured,
-    SelectType
+    SelectType,
+    ImageTitleContainer
 
 } from './styles'
-
-const DEFAULT_IMAGE = 'https://surtido.pe/wp-content/uploads/2021/05/Shingeki-no-kyojin-Endo-obu-za-warudo-netflix-peliculas-trailers-live-action-1024x576.jpg';
-// const DEFAULT_IMAGE = "https://indiehoy.com/wp-content/uploads/2021/07/tyler-rake.jpg";
-const TITLE_MOVIE = 'https://occ-0-3111-2433.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABSYkfln-wVEwKGG0OCP9i5Mg3G93Df45g7a9OGbh8ywlJr2ZekWHGmimiywRh3vw_Vk-qVWiji1naEBuNHLm9bmN4OeqiDD1SKbvmXejjC11.png?r=d4b';
 
 interface Props {
     type?: 'movie' | 'serie'
@@ -45,17 +42,14 @@ const index = ({ type }: Props) => {
                     </Category>
                 )
             }
-            <ImageBg
-                src={DEFAULT_IMAGE}
-                alt='Featured'
-            />
+            <ImageBg></ImageBg>
             <Info>
-                <ImageTitleMovie
-                    src={TITLE_MOVIE}
-                    alt='Info'
-                />
+                <ImageTitleContainer>
+                    <ImageTitleMovie />
+                </ImageTitleContainer>
+
                 <Description>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores accusamus, quia, animi repudiandae minus quae atque corporis repellat pariatur doloribus labore delectus iste ea aliquam reiciendis. Ex
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores accusamus, quia, animi repudiandae minus quae atque corporis repellat pariatur doloribus.
                 </Description>
                 <ContainerButtons>
                     <ButtonPlay>

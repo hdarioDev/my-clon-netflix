@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import {
     Nav,
@@ -18,12 +19,19 @@ import {
 } from './styles'
 
 
-const DEFAULT_IMAGE = "https://assets.nflxext.com/ffe/siteui/vlv3/a795ee10-8c6d-467c-8159-254be2b69013/047313be-8d6a-46dd-9396-bd286fa260ad/BO-es-20220912-popsignuptwoweeks-perspective_alpha_website_large.jpg";
+const DEFAULT_IMAGE = "https://ih1.redbubble.net/image.618427241.3222/flat,128x,075,f-pad,128x128,f8f8f8.u3.jpg";
 const IMG_LOGO = 'https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png'
 
 const index = () => {
 
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false)
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+        console.log("event");
+
+        navigate('/login')
+    }
 
     window.onscroll = () => {
         setIsScrolled(window.pageYOffset === 0 ? false : true);
@@ -35,12 +43,13 @@ const index = () => {
         <Nav isScrolled={isScrolled}>
             <Container>
                 <Left>
-                    <ImgLogo src={IMG_LOGO} alt="Logo" width="100%" />
-                    <ItemLeft>Home</ItemLeft>
-                    <ItemLeft>Series</ItemLeft>
-                    <ItemLeft>Movies</ItemLeft>
-                    <ItemLeft>Popular</ItemLeft>
-                    <ItemLeft>My List</ItemLeft>
+                    <ImgLogo src={IMG_LOGO} alt="Logo" />
+                    <ItemLeft to="/home" className={({ isActive }) => isActive ? "nav-active" : ''} > Home </ItemLeft>
+                    <ItemLeft to="/home" className={({ isActive }) => isActive ? "nav-active" : ''} > Series </ItemLeft>
+                    <ItemLeft to="/home" className={({ isActive }) => isActive ? "nav-active" : ''} > Movies </ItemLeft>
+                    <ItemLeft to="/home" className={({ isActive }) => isActive ? "nav-active" : ''} > Popular </ItemLeft>
+                    <ItemLeft to="/home" className={({ isActive }) => isActive ? "nav-active" : ''} > My List </ItemLeft>
+
                 </Left>
                 <Right>
                     <WrapIconLogo />
@@ -52,7 +61,7 @@ const index = () => {
                         <WrapIconArrow />
                         <ProfileOptions>
                             <ProfileOptionsItem>Settings </ProfileOptionsItem>
-                            <ProfileOptionsItem>Logout </ProfileOptionsItem>
+                            <ProfileOptionsItem onClick={handleLogout} >Logout </ProfileOptionsItem>
                         </ProfileOptions>
                     </Profile>
 
