@@ -101,6 +101,12 @@ export const SpanYear = styled.div`
 export const ItemInfoDescription = styled.div`
     font-size:13px;
     margin-bottom: 12px;
+    display: flex;
+    flex-direction: 'row';
+    overflow: hidden;
+ div{
+    margin-left: 12px;
+ }
 `
 
 export const ItemInfoGenre = styled.div`

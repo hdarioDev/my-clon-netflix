@@ -7,7 +7,9 @@ export default createGlobalStyle`
         outline:0;
         box-sizing:border-box;
         font-family: 'Roboto', sans-serif; 
-        
+        ::-webkit-scrollbar {
+    display: none;
+}
     }
     #root{
         margin:0;

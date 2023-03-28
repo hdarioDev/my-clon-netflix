@@ -14,7 +14,8 @@ import {
     SpanHour,
     SpanLimit,
     SpanYear,
-    ItemInfoDescription
+    ItemInfoDescription,
+    ItemInfoGenre
 } from './styles'
 
 const URI_PO = 'https://image.tmdb.org/t/p/w500'
@@ -27,6 +28,8 @@ interface IProps {
 
 const index = ({ index, movie }: IProps) => {
     const [isHovered, setIsHovered] = useState(false)
+    console.log('==> ', movie);
+
     const navigate = useNavigate();
     const handleWatch = () => {
         navigate('/watch')
@@ -60,15 +63,18 @@ const index = ({ index, movie }: IProps) => {
                                 <SpanYear>1999</SpanYear>
                             </ItemInfoTop>
                             <ItemInfoDescription>
-                                Lorem, ipsum dolor sit amet consectetur.
+                                {`${movie.original_title ? movie.original_title : movie.name}`}
+                                <ItemInfoGenre>
+                                    Action
+                                </ItemInfoGenre>
                             </ItemInfoDescription>
-                            {/* <ItemInfoGenre>
-                                Action
-                            </ItemInfoGenre> */}
+                            {/* */}
                         </ItemInfo>
                     </>
                 )
             }
+            {/* <p>  {`${movie.original_title}`}</p> */}
+
         </Item>
     )
 }
